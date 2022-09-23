@@ -38,10 +38,9 @@ body:
     attributes:
       label: Repository type
       description: |
-        Should the repository be public or private?
+        IOOS allows only Public GitHub repostories.  Please file a separate issue in this repository if you feel we need to reconsider this policy.
       options:
         - Public
-        - Private
     validations:
       required: true      
 
