@@ -80,5 +80,10 @@ body:
       label: Specify a .gitignore file type
       description: If the repository should have a .gitignore file, choose from the .gitignore language/file types listed [here](https://github.com/github/gitignore).  
       placeholder: <enter .gitignore file type (e.g. Python.gitignore)>
-          
-  
+
+  - type: input
+    id: gh-user-name
+    attributes:
+      label: Specify GitHub usernames or IOOS GitHub Team for repository access
+      description: Specify who should have access to this repository and what [role](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#repository-roles-for-organizations) they should have. List the GitHub usernames or the appropriate [IOOS GitHub Team](https://github.com/orgs/ioos/teams) followed by the role.
+      placeholder: @ioos/biodata **Maintain**
