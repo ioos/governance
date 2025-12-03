@@ -1,0 +1,92 @@
+name: Move Repository to IOOS Request
+description: Request to move a repository under the IOOS Organization
+labels: repo
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Complete the form fields below describing the repository you propose to move and why it should be part of the IOOS Organization.  Enter an appropriate issue title (e.g. 'Create cool-ioos-project repo').
+
+  - type: input
+    id: existing-repo
+    attributes:
+      label: Url to the existing repository.
+      placeholder: <enter url>
+    validations:
+      required: true
+
+  - type: input
+    id: gh-user-name
+    attributes:
+      label: Specify GitHub usernames for the person who should perform the transfer.
+      description: Specify who should perform the transfer of the repository. This person should have temporary admin rights on both the destination GitHub organization and the source GitHub organization or repository.
+      placeholder: @mathewbiddle
+
+  - type: input
+    id: repo-name
+    attributes:
+      label: Should the name of the repository change when transferred? If so, what is the new name?
+      description: Specify if the name of the repository should change during the transfer and identify what the new name should be. 
+      placeholder: Yes, change the name of `repo1` to `ioos_repo`. 
+
+
+  - type: input
+    id: gh-access-user-name
+    attributes:
+      label: Specify GitHub usernames or IOOS GitHub teams for repository access
+      description: Specify who should have access to this repository and what [role](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#repository-roles-for-organizations)(excluding Admin) they should have. List the GitHub usernames or the appropriate [IOOS GitHub Team](https://github.com/orgs/ioos/teams) followed by the role.
+      placeholder: ioos/biodata **Maintain**
+
+  - type: textarea
+    id: repo-purpose
+    attributes:
+      label: Repository purpose
+      description: |
+        Please describe in a few sentences why this repository is approrpriate for the IOOS GitHub Organization.  A few questions for consideration: does it relate to an IOOS project, is it being developed by IOOS personnel or partners, does it add to or compliment existing IOOS packages or modules?  If the answer is yes to any of these questions, then it likely belongs here - just tell us why.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repo-description
+    attributes:
+      label: Repository description
+      description: |
+        Provide a public description of the repository (this will be entered into the corresponding repository description field if accepted).  350 characters maximum length.
+    validations:
+      required: true
+     
+  - type: textarea
+    id: service-token
+    attributes:
+      label: What GitHub services/tokens/actions need to be configured once transfered? If any.
+      description: |
+        In some cases, repositories have specific tokens/services/actions that will need to be updated post-transfer. Please describe any such changes below.
+    validations:
+      required: true      
+
+  - type: dropdown
+    id: repo-license
+    attributes:
+      label: Repository license
+      description: |
+        Does the repository already have a license? If not, which license should be applied? IOOS prefers BSD-3 for software and CC0 v1.0 for documentation.
+      options:
+        - License already in repository.
+        - BSD 3-Clause
+        - Creative Commons Zero v1.0 Universal
+        - Apache License 2.0
+        - GNU General Public License v2.0
+        - MIT License
+    validations:
+      required: true
+      
+  - type: markdown
+    attributes:
+      value: |
+        ## Optional information
+
+
+  - type: markdown
+    attributes:
+      value: |
+        We reserve the right to adjust the permissions/access list in situations where an existing team or group can be used for simplicity sake.
