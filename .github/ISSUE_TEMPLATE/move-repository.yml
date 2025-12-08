@@ -20,7 +20,7 @@ body:
     attributes:
       label: Specify GitHub usernames for the person who should perform the transfer.
       description: Specify who should perform the transfer of the repository. This person should have temporary admin rights on both the destination GitHub organization and the source GitHub organization or repository.
-      placeholder: @mathewbiddle
+      placeholder: mathewbiddle
 
   - type: input
     id: repo-name
@@ -90,3 +90,4 @@ body:
     attributes:
       value: |
         We reserve the right to adjust the permissions/access list in situations where an existing team or group can be used for simplicity sake.
+
